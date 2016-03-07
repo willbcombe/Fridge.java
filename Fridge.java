@@ -99,5 +99,5 @@ public class Fridge{
 	public static void displayContent(int pos){
 		for (int cot =0; cot<pos;cot++)
 				System.out.println((cot+1) +" "+list[cot]+" "+ quant[cot]+" "+unit[cot]);
-	}
+	} 
 }
