@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//
 public class Fridge{
 		//public static String[] menu = new String[8];
 		//public static String[] list = new String[40];
@@ -12,7 +12,7 @@ public class Fridge{
 		Double[] quant = new Double[40];
 		String[] unit = new String[40];
 		int pos =0;
-		String[] options = new String[8]; 
+		String[] options = new String[8];
 		Scanner sc = new Scanner(System.in);
 
 		options[0] = "1:  Display Content";
@@ -27,7 +27,7 @@ public class Fridge{
 		String input = sc.next();
 		System.out.println(menu.toString());*/
 		int input=0;
-	
+
 		while(input!=4){
 			System.out.println("Please Select an option");
 			System.out.println(options[0]);
@@ -36,8 +36,8 @@ public class Fridge{
 			System.out.println(options[3]);
 		    input = sc.nextInt();
 			System.out.println(options.toString());
-		
-			if (input == 1){ 
+
+			if (input == 1){
 			for(int i=0; i<menu.length;i++){
 				System.out.println(menu[i]);
 			}
@@ -46,13 +46,13 @@ public class Fridge{
 				//System.out.println("Enter item you want to add to, or 0 to create a new item");
 				//displayContent(pos);
 				//quant[pos]=removeItem(pos);
-				//somehow remove this level of array 
+				//somehow remove this level of array
 				//pos++;
 			//}
 			if (input==3){//invokes addItem
 				menu[pos]=addItem(pos,food,quant,unit);
 				pos++;
-				
+
 			}
 				pos++;
 		}
@@ -75,14 +75,14 @@ public class Fridge{
 		System.out.println("Please enter the units (L, mL, oz,g, mg, lb, n/a)");
 		String units = bc.next();
 
-			 
+
 			food[pos] = name;
 
-			quant[pos] = quantity; 
+			quant[pos] = quantity;
 			unit[pos] = convertUnits(pos, food, quantity, units, unit,quant,name);
 			return 	name +" " + unit[pos];
 	}
-	
+
 	public static String convertUnits(int pos, String[] food, Double quantity, String units,String unit[],Double[] quant, String name){
 		String[] cFood =food;
 		String[] cUnits = unit;
@@ -103,38 +103,38 @@ public class Fridge{
 					}
 					if(uni1=="ml" && uni2=="l"){
 						converted = quantity / 1000 + quantity % 1000;
-						value = converted +quant[i] ; 
+						value = converted +quant[i] ;
 						newUnits = swapUnits(i,uni2,cQuant);
 						cUnits[i]=newUnits;
 					}
 					if(uni1=="g" && uni2=="mg"){
 						converted = quantity * 1000;
-						value = converted +quant[i];  
+						value = converted +quant[i];
 						newUnits = swapUnits(i,uni2,cQuant);
 						cUnits[i]=newUnits;
 					}
 					if(uni1=="mg" && uni2=="g"){
 						converted = quantity / 1000 + quantity % 1000;
-						value = converted +quant[i]; 
+						value = converted +quant[i];
 						newUnits = swapUnits(i,uni2,cQuant);
-						cUnits[i]=newUnits; 
+						cUnits[i]=newUnits;
 					}
 					if(uni1=="lbs" && uni2=="oz"){
 						converted = quantity * 16;
-						value = converted +quant[i];  
+						value = converted +quant[i];
 						newUnits = swapUnits(i,uni2,cQuant);
 						cUnits[i]=newUnits;
 					}
 					if(uni1=="oz" && uni2=="lbs"){
 						converted = quantity /16 + quantity%16;
-						value = converted +quant[i]; 
+						value = converted +quant[i];
 						newUnits = swapUnits(i,uni2,cQuant);
 						cUnits[i]=newUnits;
 					}
 
 					else if(uni1 == uni2){
 						value = 2*quantity;
-						newUnits = uni1; 
+						newUnits = uni1;
 					}
 
 
@@ -143,7 +143,7 @@ public class Fridge{
 		}
 		String almost = String.valueOf(value);
 		String conversionY= almost +" " + newUnits;
-		return conversionY;	
+		return conversionY;
 	}
 	public static String swapUnits(int i,String uni2,Double[] cQuant){
 		String[] newUnits = new String[40];
@@ -163,7 +163,7 @@ public class Fridge{
 		 return newUnits[i];
 
 	}
-		
+
 	/*
 	public static Double removeItem(int input){
 		Scanner sc = new Scanner(System.in);
