@@ -1,0 +1,37 @@
+SmartFridge: Part A Introduction
+CPSC 1150-005/006, Spring 2016 Instructor: Adina Goldberg Langara College
+Imagine a refrigerator so smart, it knew what was inside. Imagine you could ask for a food item, in a certain quantity, and it would be automatically dispensed (if there was enough of that item in the fridge). Imagine that to get rid of old/rotten food, you could just tell the fridge to empty itself, and the food inside would magically disappear. That’s right, your task is to implement a SmartFridge.
+About the project
+• Must be done with a partner.
+• Is worth 10% of your final grade (half of the 20% lab mark).
+• Has two parts (A and B). Part B will build on your program from Part A. You will only submit the final version of the program (after completing Part B).
+• Recommended completion date for Part A is March 20. Completing Part A too late will not leave enough time for you to complete Part B. Part B will be due before the last day of classes.
+• Will be graded according to the following marking scheme:
+Design (30%): Good top-down design (loose coupling, strong cohesion, effective reuse ofsubproblems). Program is very modular. Each method solves a fairly small problem.
+Correctness and completeness (25%): Program correctly solves all of the required prob- lems. Automatic 0 if your code does not compile.
+Conciseness and efficiency (5%): Code is only as long as it needs to be. Problems are solved using a relatively small amount of time and memory. Few unnecessary steps/vari- ables.
+Style (10%): Good variable and method names, proper indentation, correct use of con- stants.
+Internal documentation (10%): Helpful comments for variable declarations, method def- initions, class header, and non-obvious lines/blocks of code.
+External documentation (20%): Complete external documentation. Clear and com- plete algorithm listings for each method. Shows insight about limitations of the program and possible directions for improvement/future work on the program.
+Bonus marks (up to 10%): Bonus marks will be awarded for adding interesting func- tionality to the program, or going above and beyond the requirements for any particular subproblem. Bonus marks will only be awarded if added functionality is correct, well- designed, well-documented and does not detract from/overcomplicate other aspects of the program. Only attempt this if you have completed all the other requirements.
+Specifications
+The specifications for the project are a little less specific than those for the labs (in terms of exact output). This gives you more room to be creative and to personalize your project.
+User interface: The interface should be text-based. The program should display a menu of options to the user, and the user should be able to select an option. Once the corresponding task/action is complete, the menu should always be displayed again. One of the options should allow the user to exit the program.
+Accepting items: Your SmartFridge should accept items to store, given any item name, quantity, and units. For example, you should be able to store milk in a quantity of 1.5 L.
+You are required to support the following units: L (litres), mL (millilitres), oz (ounces), g (grams), mg (milligrams), lb (pounds), and items which have no units, i.e., 4 tomatoes. Your SmartFridge should automatically be able to convert between volume units, or between weight units. If an item is stored by volume, and a user attempts to add to it in weight units, you may print an error message. That is to say, you are not required to know the density of the various items.
+Removing items: Your SmartFridge should allow a user to remove an item in any desired quantity (as long as the item is available in that quantity). If the user removes all of one item, the item should be removed from storage.There should also be an option to empty the entire SmartFridge. This will remove all items. The user should be prompted one extra time to make sure that they really want to remove all contents.
+Printing contents: Your SmartFridge should be able to print a list of its contents (along with quantities and units) in alphabetical order by name. If the fridge is empty, print a message expressing that instead.
+Storage: At any given time, you may not allocate more than twice the storage space you are actually using. This means any arrays you are using must be more than half full. The one exception is that initially, of course, your fridge will be empty. Begin by allocating space for no more than five items.
+Recipe: You must allow a user to enter a recipe (a list of items and their quantities and units). This recipe must be saved. The user must be able to return at another time and ask to print the recipe. The user must also be able to delete the recipe.
+The user must also be able to ask to see the outstanding ingredients from the recipe. This means your SmartFridge must be able to determine what items (in what quantities) are still missing from the fridge in order to complete the recipe. Upon request, your SmartFridge must print a shopping list of remaining ingredients to be purchased. If there is no recipe stored, the SmartFridge must express this fact.
+Finally, there should be an option to make (cook) the recipe. If there aren’t enough ingredients, this should be expressed. If all of the ingredients are present, the SmartFridge should dispense all of the necessary ingredients (i.e., remove the required quantities of those items from the fridge).Validating input: Your program should validate all user input. If input is incorrect (in value or in type) the program should not crash. Instead, it should just prompt the user again for correct input.
+Maximum size: Unfortunately, a SmartFridge cannot defy the laws of physics. Your Smart- Fridge must become full when it reaches 40 items, and should refuse to accept any more items until something is removed.
+Tips
+• Follow these steps:
+1. First, analyse the problem. Talk with your partner about what is required until youhave an idea of all the things your SmartFridge must do.
+2. Next, design a solution. Do not write any code. Spend a lot of time on this step. This includes creating (and refining) your top-down-design diagram. This also includes writing algorithms for each subproblem. These first two steps should take about 80% of the time you spend on the project. Once you are done designing, coding should be the easy part.
+3. Finally, after your design is very detailed and you have gone through each algorithm by hand to check correctness, begin coding. If you spend more than twenty minutes on any one method, leave the keyboard and go back and improve your design.
+• Save your work often, and in multiple places. There will be no mercy for disappearing files.
+• Look at examples from class/the textbook to help you. Borrow code you have already writtenfrom labs you have done before.
+• Do not wait until the end of Part B to do your documentation. Write internal documentation as you code. Write external documentation for Part A (which you can then extend into documentation for the whole project once you have completed Part B).
+When complete. . .Make sure both partners save a copy of your final program, top-down design diagram, and documentation.
